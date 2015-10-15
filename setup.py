@@ -8,6 +8,8 @@ try:
 except (IOError, ImportError):
     with open('README.md', 'rb') as f:
         description = f.read()
+    # If Python3, ensure we have a string.
+    description = str(description.decode('utf-8'))
 
 
 setup(
